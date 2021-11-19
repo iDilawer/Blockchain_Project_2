@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: darkred;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.accept {
+  color: #FFF;
+  background: darkred;
+  padding: 15px 20px;
+  box-shadow: 0 4px 0 0 #2EA62E;
+}
+.accept:hover {
+  background: #6FE76F;
+  box-shadow: 0 4px 0 0 #7ED37E;
+}
+.deny {
+  color: #FFF;
+  background: darkred;
+  padding: 15px 20px;
+  box-shadow: 0 4px 0 0 #CB4949;
+}
+.deny:hover {
+  background: rgb(255, 147, 128);
+  box-shadow: 0 4px 0 0 #EF8282;
+}
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+}
+
+.container {
+  padding: 16px;
+  width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+  <script>
+    var web3 = new Web3();
+    web3.setProvider(new web3.providers.HttpProvider("http://127.0.0.1:7545"));
+    web3.eth.defaultAccount = web3.eth.accounts[0];
+    const abi = [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "pswd",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "role",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getName",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "new_Name",
+          "type": "string"
+        }
+      ],
+      "name": "setName",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getRole",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "new_Role",
+          "type": "string"
+        }
+      ],
+      "name": "setRole",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getPswd",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "new_pswd",
+          "type": "string"
+        }
+      ],
+      "name": "setPswd",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ];
+const address = '0xDB0eE561fF1D2319862426a9209C94dE08620281';
+
+var SimpleSmartContract = new web3.eth.Contract(abi, address);
+
+async function submitFunction() {
+  window.alert("Submitted all details")
+}
+
+</script>
+</style>
+    
+</head>
+<body>
+<br><br><br>
+<center><h1>Welcome Tenant 4</h1></center><br>
+
+<div class="container">
+    <label for="role">Rent: </label>
+    <label for="role">$5000 </label><br><br>
+
+    <label for="role">Location: </label>
+    <label for="area">Mountain View, California</label><br><br>
+
+    <label for="area">Area: </label>
+    <label for="area">United States</label><br><br>
+
+    <label for="role">Price: </label>
+    <label for="role">$50000 </label><br><br>
+
+    <center>
+        <br>
+        <a href="#" class="accept">Apply for Rent <span class="fa fa-check"></span></a>
+        <a href="#" class="deny">Make Payment <span class="fa fa-close"></span></a>
+      </center>
+
+   
+  </div>
+
+</body>
+</html>
